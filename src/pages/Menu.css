@@ -1,0 +1,164 @@
+.menu-page { padding-top: 80px; }
+
+.menu-header {
+  padding: 60px 0;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.menu-header-bg { position: absolute; inset: 0; z-index: 0; }
+
+.menu-filter-bar {
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(244,143,177,0.15);
+  padding: 16px 0;
+  box-shadow: 0 4px 20px rgba(244,143,177,0.08);
+}
+.menu-filter-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.menu-search {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  border: 2px solid rgba(244,143,177,0.2);
+  border-radius: 50px;
+  padding: 10px 18px;
+  transition: border-color 0.3s ease;
+}
+.menu-search:focus-within { border-color: var(--pink); }
+.menu-search i { color: #bbb; font-size: 0.9rem; }
+.menu-search-input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.search-clear {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.menu-sort {
+  padding: 10px 18px;
+  border: 2px solid rgba(244,143,177,0.2);
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: white;
+  color: var(--text);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease;
+  appearance: none;
+  padding-right: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23F48FB1' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+.menu-sort:focus { border-color: var(--pink); }
+
+.category-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.category-pill {
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 2px solid rgba(244,143,177,0.25);
+  background: var(--white);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.category-pill:hover { border-color: var(--pink); color: var(--pink); }
+.category-pill.pill-active {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: white;
+  box-shadow: 0 4px 15px rgba(244,143,177,0.35);
+}
+
+.menu-results-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+.clear-filter {
+  background: none;
+  border: 1px solid rgba(244,143,177,0.3);
+  color: var(--pink);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.clear-filter:hover { background: var(--pink); color: white; }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.menu-card-item {
+  animation: fadeUp 0.5s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-empty {
+  text-align: center;
+  padding: 80px 0;
+}
+.empty-icon { font-size: 4rem; margin-bottom: 1rem; }
+.menu-empty h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.menu-empty p { color: #888; margin-bottom: 2rem; }
+
+.menu-bottom-cta {
+  background: linear-gradient(135deg, var(--cream), #fff);
+  padding: 60px 0;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(244,143,177,0.1);
+}
+.menu-bottom-cta h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+.menu-bottom-cta p { color: #888; margin-bottom: 2rem; }
+
+@media (max-width: 768px) {
+  .menu-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .menu-filter-bar { top: 65px; }
+}
+@media (max-width: 480px) {
+  .menu-grid { grid-template-columns: 1fr 1fr; }
+}
